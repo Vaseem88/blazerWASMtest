@@ -26,3 +26,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: release/wwwroot
+ # changes the base-tag in index.html from '/' to 'blazerWASMtest' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to blazerWASMtest
+      run: sed -i 's/<base href="\/" \/>/<base href="\/blazerWASMtest\/" \/>/g' release/wwwroot/index.html
